@@ -1,5 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@200;400;500&display=swap');
 
-.nav-bar{
-    font-family: 'Sora', sans-serif;
+body{
+    background-color: rgb(255, 252, 227);
+    background-image: url('../images/mingo.jpg');
+    background-repeat:round;
 }
+
+.nav-container {
+    position: relative;
+    width: auto;
+    margin: auto;
+    padding: 1%;;
+    border-radius: 100px; /* Igual que el nav para mantener la forma */
+    overflow: hidden; /* Evita que el desenfoque se salga de los bordes */
+    position: fixed;
+    top: 2%; /* Distancia desde el borde superior de la ventana del navegador */
+    left: 50%; /* Posiciona el elemento en el centro horizontalmente */
+    transform: translate(-50%, -2%); /* Ajusta la posición exacta del centro */
+    
+  }
+  
+
+  .nav {
+    position: relative;
+    font-family: 'Sora', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 100px;
+    width: 100%; /* Ahora el nav ocupa el 100% del contenedor */
+    padding-block: 5px;
+    z-index: 1; /* Asegura que el texto esté por encima del fondo desenfocado */
+    background-color: transparent; /* Hace que el fondo del nav sea transparente */
+    background-color: rgba(255, 255, 255, .4); /* Ajusta el color de fondo y transparencia */
+    backdrop-filter: blur(15px); 
+     
+}
+  
+  nav a {
+    text-decoration: none; /* Esto elimina el subrayado de los enlaces */
+    color: rgb(24, 24, 24); /* Esto cambia el color del texto de los enlaces */
+    padding: 10px; /* Esto agrega un poco de espacio alrededor de los enlaces */
+    font-size: 18px;
+    border-radius: 100px;
+    transition: background-color 0.5s ease; 
+
+  }
+
+  .seleccionado{
+    background-color: #4890ee; /* Color de fondo para el elemento seleccionado */
+    color: white; /* Color de texto para el elemento seleccionado */
+    border-radius: 100px; /* Bordes redondeados para el fondo */
+    padding-inline: 20px;
+    padding-block: 5px;
+  }
+
+  p{
+    font-size: 1000px;
+  }
