@@ -2,8 +2,6 @@
 
 body{
     background-color: rgb(255, 252, 227);
-    background-image: url('../images/mingo.jpg');
-    background-repeat:round;
 }
 
 .nav-container {
@@ -56,5 +54,21 @@ body{
   }
 
   p{
-    font-size: 1000px;
+    font-size: 100px;
+  }
+
+
+  /*ANIMACIONES*/
+  @keyframes mover-izquierda-derecha {
+    100% {
+      transform: translateX(10px);
+    }
+  }
+
+  .elemento-animado {
+    animation-name: mover-izquierda-derecha;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count:initial;
+    animation-direction:alternate-reverse;
   }
