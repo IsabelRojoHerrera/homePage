@@ -21,4 +21,26 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  document.addEventListener('scroll', function() {
+    var elemento = document.querySelector('.textoAnimado');
+    var posicion = elemento.getBoundingClientRect(); // Obtiene la posición del elemento respecto al viewport
+  
 
+
+    // Verifica si el elemento está en el viewport
+    if(posicion.top < window.innerHeight ) {
+
+      elemento.style.opacity = 1; // Hace el elemento totalmente visible
+      elemento.style.transform = 'scale(1)'; // Restablece el tamaño del elemento
+    }
+  });
+
+// Detecta el evento de scroll en la ventana
+window.addEventListener('scroll', function() {
+  var elemento = document.getElementById('textoMovil');
+  var valorScroll = window.scrollY || document.documentElement.scrollTop;
+  
+  // Ajusta el valor de 'transform' basado en el scroll
+  // Puedes ajustar el factor multiplicativo para cambiar la sensibilidad
+  elemento.style.transform = 'translateY(' + (-valorScroll / 4) + 'px)';
+});

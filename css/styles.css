@@ -15,9 +15,8 @@ body{
     top: 2%; /* Distancia desde el borde superior de la ventana del navegador */
     left: 50%; /* Posiciona el elemento en el centro horizontalmente */
     transform: translate(-50%, -2%); /* Ajusta la posición exacta del centro */
-    
-  }
-  
+    z-index: 1; 
+}
 
   .nav {
     position: relative;
@@ -28,10 +27,9 @@ body{
     border-radius: 100px;
     width: 100%; /* Ahora el nav ocupa el 100% del contenedor */
     padding-block: 5px;
-    z-index: 1; /* Asegura que el texto esté por encima del fondo desenfocado */
     background-color: transparent; /* Hace que el fondo del nav sea transparente */
     background-color: rgba(255, 255, 255, .4); /* Ajusta el color de fondo y transparencia */
-    backdrop-filter: blur(15px); 
+    backdrop-filter: blur(5px); 
      
 }
   
@@ -42,7 +40,17 @@ body{
     font-size: 18px;
     border-radius: 100px;
     transition: background-color 0.5s ease; 
+    
 
+  }
+
+  .container{
+    padding: 10%;
+    background-color: blueviolet;
+    border-top-left-radius: 20rem;
+    border-top-right-radius: 20rem;
+    margin-top: 8%;
+    color: rgb(255, 252, 227);
   }
 
   .seleccionado{
@@ -57,18 +65,38 @@ body{
     font-size: 100px;
   }
 
+  .textoAnimado {
+    opacity: .1; /* Inicia invisible */
+    transform: scale(0.9); /* Inicia más pequeño */
+    transition: opacity 0.9s, transform 2s; /* Suaviza la transición */
+    font-family: 'Sora', sans-serif;
+  }
 
-  /*ANIMACIONES*/
-  @keyframes mover-izquierda-derecha {
-    100% {
-      transform: translateX(10px);
+  .bienvenida span {
+    font-family: 'Sora', sans-serif;
+    font-size: 100px;
+    opacity: 0; /* Inicia cada palabra como invisible */
+    animation: mostrarPalabra 0.5s forwards; /* Animación para hacer la palabra visible */
+  }
+  
+  /* Define la animación */
+  @keyframes mostrarPalabra {
+    to {
+      opacity: 1;
     }
   }
 
-  .elemento-animado {
-    animation-name: mover-izquierda-derecha;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count:initial;
-    animation-direction:alternate-reverse;
+.bienvenida span:nth-child(1) { animation-delay: 0.5s; }
+.bienvenida span:nth-child(2) { animation-delay: 1s; }
+.bienvenida span:nth-child(3) { animation-delay: 1.5s; }
+.bienvenida span:nth-child(4) { animation-delay: 2s; }
+.bienvenida span:nth-child(5) { animation-delay: 2.5s; }
+.bienvenida span:nth-child(6) { animation-delay: 3s; }
+
+
+
+
+  #textoMovil {
+    position: relative;
+    transition: transform 4s ease; /* Suaviza el movimiento */
   }
